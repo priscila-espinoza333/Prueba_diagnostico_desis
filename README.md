@@ -11,7 +11,6 @@ No utilicé CSS ya que en las indicaciones no lo contemplaban por lo que los est
 
 Se recomienda usar la siguiente sintaxis en el archivo connect.php para establecer la conexión a la base de datos: 
 
-<?php
 // Datos de conexión a la base de datos
 $hostname = "localhost"; // Nombre del servidor de la base de datos
 $username = "tu_usuario"; // Nombre de usuario de la base de datos
@@ -25,4 +24,3 @@ $conn = new mysqli($hostname, $username, $password, $database);
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
-?>
