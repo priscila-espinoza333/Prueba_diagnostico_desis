@@ -46,22 +46,16 @@ function sendFormulario() {
     var nombre = document.getElementById("nombre").value;
     var alias = document.getElementById("alias").value;
     var rut = document.getElementById("rut").value;
+    var email = document.getElementById("email").value;
+    var region = document.getElementById("select_region").value; 
+    var comuna = document.getElementById("select_comuna").value;
+    var candidato = document.getElementById("select_candidato").value;
     // Se valida que el rut sea chileno
     var rut_validado = validarRut(rut);
     if (rut_validado)
     {
         rut_validado =rut
-    }
-    else
-    {
-        alert("El rut ingresado no es válido, intente nuevamente")
-    }
-    var email = document.getElementById("email").value;
-    var region = document.getElementById("select_region").value; 
-    var comuna = document.getElementById("select_comuna").value;
-    var candidato = document.getElementById("select_candidato").value;
-
-    // Se valida que hayan 2 checkbox clickeados
+            // Se valida que hayan 2 checkbox clickeados
     if (!alMenosDosCheckboxMarcados()) // Si alMenosDosCheckboxMarcados() es falso devuele un alert
     {
         alert("Cómo se enteró de nosotros: Debe seleccionar al menos dos opciones.");
@@ -71,7 +65,7 @@ function sendFormulario() {
     $.post("php/index.php", {        
         nombre: nombre,
         alias: alias,
-        rut: rut,
+        rut: rut_validado,
         email: email,
         region: region,
         comuna: comuna,
@@ -114,4 +108,12 @@ function sendFormulario() {
             console.error("Error al analizar la respuesta JSON: " + error);
         }
     }); 
+    }
+    else
+    {
+        alert("El rut ingresado no es válido, intente nuevamente")
+    }
+
+
+
 }
