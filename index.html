@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+
+    <title>Formulario de Votación</title>
+</head>
+<body>
+    <h2>FORMULARIO DE VOTACIÓN:</h2>
+    <div style ="border-style: groove; margin-right: 600px;";>
+    <form action="/form.php" method="post" id="form_votacion">
+        <div style="margin-bottom: 10px;">
+            <label>Nombre y Apellido: </label>
+            <input type="text" name="nombre" id="nombre" style="margin-left: 70px;" class="required"> 
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label>Alias: </label>
+            <input type="text" name="alias" id="alias" style="margin-left: 159px;" class="minlength-5 alphanumeric"> 
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label>Rut: </label>
+            <input type="text" name="rut" id="rut" style="margin-left: 170px;" class="required rut"> 
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label>Email:</label>
+            <input type="email" name="email" id="email" style="margin-left: 155px;" class="required email"> 
+        </div>  
+        <div style="margin-bottom: 10px;">
+            <label>Región:</label>
+            <select id="select_region" name="select_region" style="margin-left: 147px; width: 169px;"  onChange="select_comunas()">
+                <option value="">Selecciona una opción</option>
+            </select>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label>Comuna: </label>
+            <select id="select_comuna" name="select_comuna"  style="margin-left: 139px; width: 169px;">
+                <option value="">Debe seleccionar una región</option>
+            </select>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label >Candidatos: </label>
+            <select id="select_candidato" name="select_candidato"  style="margin-left: 121px;; width: 169px;">
+                <option value="">Selecciona una opción</option>
+            </select>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label>Cómo se enteró de Nosotros: </label>
+            <input type="checkbox" name="web" id="web">Web
+            <input type="checkbox" name="tv" id="tv">TV
+            <input type="checkbox" name="rrss" id="rrss">Redes Sociales
+            <input type="checkbox" name="amigo" id="amigo">Amigo
+        </div>
+
+        <button type="button" name="votar" id="votar">Votar</button>
+    </form>
+</div>
+
+  
+
+</body>
+<script src="js/index.js"></script>
+<script src="js/select.js"></script>
+<script src="js/validation.js"></script>
+</html>
