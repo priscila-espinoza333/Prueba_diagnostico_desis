@@ -35,10 +35,10 @@ function alMenosDosCheckboxMarcados() {
         document.getElementById("rrss"),
         document.getElementById("amigo")
     ];
-    var checkedCount = checkboxes.filter(function(checkbox) {
+    var checkedCount = checkboxes.filter(function(checkbox) { // Revisa cuales son los checkbox que estan clickeados mediante .checked
         return checkbox.checked;
-    }).length;
-    return checkedCount >= 2;
+    }).length; // Sacamos la cantidad de checkbox
+    return checkedCount >= 2; // Si la cantidad es mayor a 2 devuelve true, si es menor devuelve false
 }
 
 // Función que hace envio del formulario mediante AJAX 
@@ -62,7 +62,7 @@ function sendFormulario() {
     var candidato = document.getElementById("select_candidato").value;
 
     // Se valida que hayan 2 checkbox clickeados
-    if (!alMenosDosCheckboxMarcados()) 
+    if (!alMenosDosCheckboxMarcados()) // Si alMenosDosCheckboxMarcados() es falso devuele un alert
     {
         alert("Cómo se enteró de nosotros: Debe seleccionar al menos dos opciones.");
         return; 
@@ -81,12 +81,12 @@ function sendFormulario() {
         tv: document.getElementById("tv").checked ? 1 : 0,
         rrss: document.getElementById("rrss").checked ? 1 : 0,
         amigo: document.getElementById("amigo").checked ? 1 : 0,
-        proceso: 'ENVIAR_FORMULARIO'
+        proceso: 'ENVIAR_FORMULARIO' // Se envia el proceso para identificar que hacer
     }, function(result) {
         console.log(result);
         var obj = JSON.parse(result);
         try {
-            if (obj.respuesta === 'OK') 
+            if (obj.respuesta === 'OK') // Si la respuesta fue exitosa se pasan a vacio los datos y se despliega alert de registro exitoso
             {
                 alert("Registro con éxito");
                 // Deja en vacio los input

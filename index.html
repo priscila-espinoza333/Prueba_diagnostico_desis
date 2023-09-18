@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  <!-- Importacion de JQUERY-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script> <!-- Importacion de VALIDATION-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script> <!-- Importacion de VALIDATION-->
 
     <title>Formulario de Votación</title>
 </head>
 <body>
     <h2>FORMULARIO DE VOTACIÓN:</h2>
     <div style ="border-style: groove; margin-right: 600px;";>
+         <!-- INICIO FORMULARIO -->
     <form action="/form.php" method="post" id="form_votacion">
         <div style="margin-bottom: 10px;">
             <label>Nombre y Apellido: </label>
@@ -32,7 +33,7 @@
         </div>  
         <div style="margin-bottom: 10px;">
             <label>Región:</label>
-            <select id="select_region" name="select_region" style="margin-left: 147px; width: 169px;"  onChange="select_comunas()">
+            <select id="select_region" name="select_region" style="margin-left: 147px; width: 169px;"  onChange="select_comunas()">  <!-- FUNCION PROVENIENTE DE SELECT.JS -->
                 <option value="">Selecciona una opción</option>
             </select>
         </div>
@@ -58,12 +59,13 @@
 
         <button type="button" name="votar" id="votar">Votar</button>
     </form>
+    <!-- FIN FORMULARIO -->
 </div>
 
   
 
 </body>
-<script src="js/index.js"></script>
-<script src="js/select.js"></script>
-<script src="js/validation.js"></script>
+<script src="js/index.js"></script> <!-- IMPORTACION INDEX.JS -->
+<script src="js/select.js"></script> <!-- IMPORTACION SELECT.JS-->
+<script src="js/validation.js"></script> <!-- IMPORTACION VALIDATION.JS -->
 </html>
